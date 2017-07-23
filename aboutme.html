@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+   <link rel="stylesheet" href="style.css">
+ </head>
+<body>
+
+<h1>Hey!! </h1>
+
+<p>My first paragraph.</p>
+
+<p id="demo">Let's see what will happen</p>
+
+<button type="button" onclick="myFunction()">Try it</button>
+
+
+<script src="myScript.js"></script>
+
+<h2> This is the second header!</h2>
+
+<p id="demo1">Bakalim bu na ne olacak</p>
+
+<button type="button" onclick="myFunction1()">Bir daha dene!</button>
+
+ <script src="js/myScript1.js"></script>
+
+<h3> bu da ucuncusu </h3>
+<img src="images/mardigras2017.jpg" alt="mardigras" style="width:304px;height:228px;">
+
+<div  class="silinecek">
+
+<p> Buraya yazacagim hersey div bitene kadar ayni renkte kalacak.
+  Asagidaki sayi yazdigimiz basit bir kod ile ortaya cikti. </p>
+
+<p id="javabir"> </p>
+
+<script>
+var x, y, z;
+x = 5;
+y = 6;
+z = x * y;
+document.getElementById("javabir").innerHTML = z;
+</script>
+
+<p id="javaiki"> </p>
+
+<script>
+var x, y;
+x = 5;
+y=1;
+x <<=y; //didn't understand what this does??
+document.getElementById("javaiki").innerHTML = x;
+</script>
+
+</div>
+
+<div>
+
+  <p id="isim"></p>
+
+<script>
+document.getElementById("isim").innerHTML = "Selvi" + " " + "Kara";
+</script>
+
+<p class="deneme">  Buradaki seylerde kaybolacak mi bakalim? </p>
+
+</div>
+
+<div>
+
+  <button type="button" onclick="sohbet()">Hadi konusalim!</button>
+
+  <p id="ad"></p>
+<p id="soru"></p>
+
+<script>
+function sohbet() {
+    document.getElementById("ad").innerHTML = "--Hello Booper!";
+    document.getElementById("soru").innerHTML = "--Naber?";
+}
+</script>
+
+
+
+  <p id="ben"></p>
+
+<script>
+var person = {
+    firstName : "Selvi",
+    lastName  : "Kara",
+    age       : 30,
+    eyeColor  : "brown"
+};
+
+document.getElementById("ben").innerHTML =
+person.firstName + " is " + person.age + " years old.";
+</script>
+
+<!--There are two different ways to access an object property:
+// You can use person.property or person["property"] -->
+
+
+
+<p id="tip"></p>
+
+<script>
+document.getElementById("tip").innerHTML =
+typeof "" + "<br>" +
+typeof 1 + "<br>" +
+typeof [1,2,3,4] + "<br>" +
+typeof {name:'John', age:34}  + "<br>" +
+typeof function myFunc(){} + "<br>" +
+typeof true;
+</script>
+
+</div>
+
+<div>  Ilginc bir ornek:
+
+  <p id="derece"></p>
+
+<script>
+document.getElementById("derece").innerHTML =
+"The temperature is " + toCelsius(77) + " Celsius";
+
+function toCelsius(fahrenheit) {
+    return (5/9) * (fahrenheit-32);
+}
+</script>
+
+<p id="objemetod"></p>
+
+<script>
+var person = {
+    firstName: "Selvi",
+    lastName : "Kara",
+    id       : 5566,
+    fullName : function() {
+       return this.firstName + " " + this.lastName; //Bu kismi yeni ve ilginc!
+    }
+};
+
+document.getElementById("objemetod").innerHTML = person.fullName(); //burada parantez olmasi onemli!
+</script>
+<p> <mark>!!Important:<mark> A method is actually a function
+definition stored as a property value. </p>
+
+<p>
+In HTML, all global variables will become window variables.
+</p>
+
+<!-- <p id="demo"></p>
+
+<script>
+var carName = "Volvo";
+
+// code here can use window.carName
+document.getElementById("demo").innerHTML = "I can display " + window.carName;
+</script>-->
+<p> Aradaki farka dikkat:
+
+<button onclick="document.getElementById('tarih').innerHTML=Date()">The time is?</button>
+
+<p id="tarih"></p>
+
+<button onclick="this.innerHTML=Date()">The time is?</button>
+
+<p> Bu da fonksiyon yazarak tarihi gosterme ornegi:</p>
+
+<button onclick="displayDate()">The time is?</button>
+
+<script>
+function displayDate() {
+    document.getElementById("tarih1").innerHTML = Date();
+}
+</script>
+
+<p id="tarih1"></p>
+
+<span onmouseover="this.style.color='red'">This is cool!</span>
+</div>
+
+<h4>  Array Properties and Methods </h4>
+<p>The best way to loop through an array is using a standard for loop:</p>
+
+<p id="meyve"></p>
+
+<script>
+var fruits, text, fLen, i;
+
+fruits = ["Banana", "Orange", "Apple", "Mango"];
+fLen = fruits.length;
+text = "<ul>";
+for (i = 0; i < fLen; i++) {
+    text += "<li>" + fruits[i] + "</li>";
+}
+text += "</ul>";
+document.getElementById("meyve").innerHTML = text;
+</script>
+
+
+<p>The push method appends a new element to an array.</p>
+
+<button onclick="myMeyve()">Try it</button>
+
+<p id="meyvebir"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("meyvebir").innerHTML = fruits;
+
+function myMeyve() {
+    fruits.push("Lemon");
+    document.getElementById("meyvebir").innerHTML = fruits;
+}
+</script>
+
+<p>The length property provides an easy way to append new elements to an array without using the push() method.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="meyveiki"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("meyveiki").innerHTML = fruits;
+
+function myFunction() {
+    fruits[4] = "Lemon";
+     fruits[5] = "Armut";
+    document.getElementById("meyveiki").innerHTML = fruits;
+}
+</script>
+
+<mark> In JavaScript, arrays use numbered indexes and objects use named indexes. </mark>
+
+<p>This "home made" isArray() function returns true when used on an array:</p>
+
+<p id="arrayMi"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("arrayMi").innerHTML = isArray(fruits);
+
+function isArray(myArray) {
+    return myArray.constructor.toString().indexOf("Array") > -1;
+}
+</script>
+Bunu denemenin bir baska yolu da soyle:
+
+<p id="arrayMii"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("arrayMii").innerHTML = fruits instanceof Array;
+</script>
+
+The sort() method sorts an array alphabetically!
+<button onclick="myFunction()">Try it</button>
+
+<p id="meyveuc"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("meyveuc").innerHTML = fruits;
+
+function myFunction() {
+fruits.reverse();
+    document.getElementById("meyveuc").innerHTML = fruits;
+}
+</script>
+
+<ul>
+  <li>  Use if to specify a block of code to be executed, if a specified condition is true </li>
+  <li>  Use else to specify a block of code to be executed, if the same condition is false </li>
+  <li>  Use else if to specify a new condition to test, if the first condition is false</li>
+  <li>  Use switch to specify many alternative blocks of code to be executed</li>
+</ul>
+
+<p>Click the button to get a time-based greeting:</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="saatKac"></p>
+
+<script>
+function myFunction() {
+    var greeting;
+    var time = new Date().getHours();
+    if (time < 10) {
+        greeting = "Good morning";
+    } else if (time < 20) {
+        greeting = "Good day";
+    } else {
+        greeting = "Good evening";
+    }
+document.getElementById("saatKac").innerHTML = greeting;
+}
+</script>
+
+</body>
+</html>
